@@ -32,7 +32,7 @@ public class CombatPiece : GamePiece
 		if (canAttack && damage != 0) {
 			Pulse(pulseScale, pulseTime);
 			player.DealDamage(damage);
-
+			gameObject.GetComponentInChildren<ParticleSystem>().Play();
 		}
 		else {
 			canAttack = true;

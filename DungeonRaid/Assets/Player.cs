@@ -86,7 +86,8 @@ public class Player : MonoBehaviour
         level++;
         levelUpThreshold += level;
 
-        GameObject.FindGameObjectWithTag("UI").GetComponent<UIManager>().ShowLevelUpUI(levelUpThreshold, level);
+        UIEvent levelUpEvent = new UIEvent("LevelUp",level,LevelUpThreshold);
+        GameObject.FindGameObjectWithTag("UI").GetComponent<UIEventManager>().QueueEvent(levelUpEvent);
     }
 
     void Die() {

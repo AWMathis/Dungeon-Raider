@@ -18,6 +18,7 @@ public class EnemyPiece : CombatPiece {
 		int playerLevel = player.Level;
 		damage = damage + (int)(playerLevel * 0.5);
 		health = health + (int)(playerLevel * 0.5);
+		gameObject.GetComponentInChildren<ParticleSystem>().Stop();
 
 	}
 
